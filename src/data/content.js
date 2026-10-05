@@ -107,6 +107,18 @@ export const memberResources = [
     label: 'District business',
   },
   {
+    title: 'Start a New Club',
+    description: 'Official steps, support and charter guidance for launching a new Toastmasters club.',
+    url: 'https://www.toastmasters.org/start-a-club',
+    label: 'Start a club',
+  },
+  {
+    title: 'Club Quality & Growth',
+    description: 'Official resources for engaging meetings, membership growth, education and club revitalization.',
+    url: 'https://www.toastmasters.org/Membership/Leadership/Club-Quality',
+    label: 'Growth resources',
+  },
+  {
     title: 'Toastmasters Resource Library',
     description: 'Current official handbooks, forms, training material and member resources.',
     url: 'https://www.toastmasters.org/resources/resource-library',
