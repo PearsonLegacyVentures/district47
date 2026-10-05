@@ -43,4 +43,4 @@ Official Toastmasters policies and brand requirements:
 
 ## Production note
 
-The current public site remains untouched. Do not switch toastmastersd47.org to this build until District leadership approves the migration and the approved official Toastmasters logo/image assets are added from the Toastmasters Brand Portal.
+The current public site remains untouched. The rebuild now uses the official District 47 logo and approved photography published on the existing District website. Before a domain cutover, those media assets should be copied to the new production host so they do not depend on the legacy WordPress origin.
