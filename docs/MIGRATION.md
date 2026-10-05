@@ -35,8 +35,8 @@ Toastmasters International remains the authoritative source for current club mee
 
 ## Data-quality findings
 
-### Conflicting public totals
-The current homepage and About page publish different member/club totals. The replacement does not promote either number as an official current statistic. Verified structural facts such as eight Divisions and the District's 1955 founding year are used instead.
+### Published District figures
+Per project direction, the replacement uses the current website's published headline figures: over 3,000 members and 170+ clubs. These figures should continue to be reviewed as part of each Toastmasters-year content update.
 
 ### Club alignment anomalies
 The source alignment contains location anomalies and incomplete rows. The migration preserves source records rather than silently rewriting official alignment data. Users are sent to Toastmasters International for authoritative club meeting information.
@@ -62,5 +62,5 @@ Before changing the production domain, District leadership should confirm:
 2. The current District club alignment.
 3. Annual Conference dates and location.
 4. Current District contact email(s).
-5. Approved District photographs and approved Toastmasters brand assets.
+5. Confirm that the current official District 47 logo and approved District photography remain the preferred production assets.
 6. Any historical or recognition records that should be migrated beyond the public records currently surfaced.
