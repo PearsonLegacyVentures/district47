@@ -61,9 +61,9 @@ export const keyDates = [
     type: 'Speech Contests',
   },
   {
-    date: 'Apr 30 – May 1, 2027',
-    title: 'District contests at the Annual Conference',
-    description: 'Table Topics, Evaluation and International Speech contests in Coral Springs, Florida.',
+    date: 'Apr 30 – May 2, 2027',
+    title: '2027 District 47 Annual Conference',
+    description: 'The Annual Conference runs April 30–May 2 in Coral Springs, Florida. District speech contests are scheduled April 30–May 1.',
     type: 'Annual Conference',
   },
 ]
