@@ -44,11 +44,21 @@ const siteImages = {
   logo: 'https://www.toastmastersd47.org/wp-content/uploads/2026/06/D47-Logo-Horizontal.jpeg',
   trio: 'https://www.toastmastersd47.org/wp-content/uploads/2026/06/TRIO-Banner.jpeg',
   convention: 'https://www.toastmastersd47.org/wp-content/uploads/2025/08/1000039244-1024x562.jpg',
+  tli2026: 'https://www.toastmastersd47.org/wp-content/uploads/2026/07/TLI-7.png',
+  internationalChampions: 'https://www.toastmastersd47.org/wp-content/uploads/2025/06/2026-D47-International-Champ-scaled.jpg',
+  tliDivisionE: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/Division-E-TLI-2025-07-12-1024x683.jpg',
   hallOfFame: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-05-17-Florida-Hall-of-Fame-1024x682.jpg',
   annualConference: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-05-04-Annual-Conference.jpg',
+  conferenceStage: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-05-03-Annual-Conference-1024x682.jpg',
+  conferenceDinner: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-05-02-Annual-Conference.jpg',
+  divisionDContest: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-04-05-Division-D-Contests-1024x682.jpg',
   contestWinners: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-03-29-Division-C-Contests-1024x682.jpg',
+  area32Contest: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-02-15-Area-32-Contests-1024x682.jpg',
   training: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-01-18-Divisions-A-B-TLI.jpg',
+  trainingCD: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2024-07-27-Divisions-C-D-TLI-1024x682.jpg',
+  conferenceWorkshop: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2024-05-05-District-Conference-1024x682.jpg',
   conferenceRecognition: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2024-05-04-District-Conference-1024x682.jpg',
+  conferenceSession: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2024-05-03-District-Conference-1024x682.jpg',
 }
 
 function ExternalLinkButton({ href, children, className = '' }) {
@@ -150,9 +160,11 @@ function PageHero({ eyebrow, title, intro, action }) {
 }
 
 function Home() {
+  const trio = executiveLeaders.slice(0, 3)
+
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-polished">
         <div className="hero-orbit orbit-one" />
         <div className="hero-orbit orbit-two" />
         <div className="hero-47">47</div>
@@ -161,71 +173,161 @@ function Home() {
             <span className="eyebrow light">TOASTMASTERS DISTRICT 47</span>
             <h1>South Florida.<br />The Bahamas.<br /><span>One district.</span></h1>
             <p>
-              A community of clubs helping people strengthen communication, practice leadership and build confidence
-              through experience.
+              Over 3,000 members across 170+ clubs, building stronger communicators and leaders through real practice,
+              real service and a community that crosses borders.
             </p>
             <div className="hero-actions">
               <Link className="button button-yellow" to="/clubs">Find a Club <ArrowRight size={17} /></Link>
               <Link className="button button-ghost" to="/events">Upcoming Events</Link>
             </div>
+            <div className="hero-proof-line">
+              <span><strong>1955</strong> District established</span>
+              <span><strong>8</strong> Divisions</span>
+              <span><strong>2</strong> countries</span>
+            </div>
           </div>
-          <div className="hero-media">
+          <div className="hero-media hero-media-polished">
             <img src={siteImages.convention} alt="District 47 members celebrating together at a Toastmasters event" />
+            <div className="hero-media-wash" />
             <div className="hero-stat-card">
-              <span className="panel-label">DISTRICT 47 · EST. 1955</span>
+              <span className="panel-label">DISTRICT 47 · SOUTH FLORIDA + THE BAHAMAS</span>
               <div className="region-row">
                 <div className="region-stat"><strong>3,000+</strong><span>members</span></div>
                 <div className="region-stat"><strong>170+</strong><span>clubs</span></div>
               </div>
-              <p>Serving South Florida and The Islands of The Bahamas, plus fully online clubs with international members.</p>
-              <Link to="/clubs" className="text-link light-link">Explore the directory <ChevronRight size={16} /></Link>
+              <Link to="/clubs" className="text-link light-link">Explore the District <ChevronRight size={16} /></Link>
             </div>
+          </div>
+        </div>
+        <div className="hero-bottom-fade" />
+      </section>
+
+      <section className="leadership-spotlight">
+        <div className="container leadership-spotlight-shell">
+          <div className="leadership-visual">
+            <img src={siteImages.trio} alt="District 47 2026–2027 leadership trio" />
+            <div className="leadership-visual-label">
+              <span>2026–2027</span>
+              <strong>Meet the Trio</strong>
+            </div>
+          </div>
+          <div className="leadership-copy">
+            <span className="eyebrow">DISTRICT LEADERSHIP</span>
+            <h2>Leadership with a face, not just a title.</h2>
+            <p>
+              District 47 is led by members who have grown through the same clubs, contests, training rooms and service
+              roles as the people they now support.
+            </p>
+            <div className="trio-list">
+              {trio.map((leader, index) => (
+                <div className="trio-person" key={leader.name}>
+                  <span className="trio-index">0{index + 1}</span>
+                  <div>
+                    <strong>{leader.name}</strong>
+                    <span>{leader.role}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <Link className="text-link" to="/leadership">Meet the full District team <ArrowRight size={16} /></Link>
           </div>
         </div>
       </section>
 
-      <section className="quick-paths section">
+      <section className="quick-paths section soft-flow">
         <div className="container">
-          <div className="section-heading">
-            <span className="eyebrow">WHERE DO YOU WANT TO GO?</span>
-            <h2>District 47, without the scavenger hunt.</h2>
+          <div className="split-heading">
+            <div>
+              <span className="eyebrow">START HERE</span>
+              <h2>Everything important, without digging.</h2>
+            </div>
+            <p className="heading-note">The fastest routes for visitors, members and club officers.</p>
           </div>
-          <div className="quick-grid">
+          <div className="quick-grid quick-grid-soft">
             {[
-              [MapPin, 'Find a club', 'Search by place, Division, Area or meeting format.', '/clubs'],
-              [CalendarDays, 'What’s next', 'See contest windows, conference dates and District events.', '/events'],
-              [BookOpen, 'Member resources', 'Training, contests, District business and official resources.', '/members'],
-              [Users, 'Find a leader', 'District, Division and Area leadership in one directory.', '/leadership'],
+              [MapPin, 'Find a club', 'Search District 47 by place, Division, Area or meeting format.', '/clubs'],
+              [CalendarDays, 'What’s next', 'Conference, contests, training and District dates.', '/events'],
+              [BookOpen, 'Member resources', 'Training, District business and official Toastmasters resources.', '/members'],
+              [Users, 'Find a leader', 'District, Division and Area leadership in one place.', '/leadership'],
             ].map(([Icon, title, copy, to]) => (
-              <Link to={to} className="quick-card" key={title}>
-                <Icon size={24} />
+              <Link to={to} className="quick-card quick-card-soft" key={title}>
+                <div className="quick-icon"><Icon size={23} /></div>
                 <h3>{title}</h3>
                 <p>{copy}</p>
-                <span>Open <ArrowRight size={16} /></span>
+                <span>Explore <ArrowRight size={16} /></span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="photo-proof">
-        <div className="container photo-proof-grid">
-          <figure className="photo-proof-main">
-            <img src={siteImages.training} alt="District 47 Toastmasters gathered for training" />
-            <figcaption>Training across the District</figcaption>
+      <section className="motion-section">
+        <div className="container motion-heading">
+          <span className="eyebrow light">DISTRICT 47 IN MOTION</span>
+          <h2>Training rooms. Contest stages. Recognition nights. Real people doing the work.</h2>
+          <p>Approved District photography from events across the District.</p>
+        </div>
+        <div className="container motion-collage">
+          <figure className="motion-photo motion-photo-a">
+            <img src={siteImages.tliDivisionE} alt="District 47 members at Toastmasters leadership training" />
+            <figcaption><span>TRAINING</span><strong>Building capable club leaders</strong></figcaption>
           </figure>
-          <figure>
-            <img src={siteImages.hallOfFame} alt="District 47 members at a Hall of Fame event" />
-            <figcaption>Recognition that matters</figcaption>
+          <figure className="motion-photo motion-photo-b">
+            <img src={siteImages.conferenceStage} alt="District 47 members receiving recognition on stage" />
+            <figcaption><span>RECOGNITION</span><strong>Celebrating the people who serve</strong></figcaption>
           </figure>
-          <figure>
-            <img src={siteImages.annualConference} alt="District 47 members at the annual conference" />
-            <figcaption>One District, in the same room</figcaption>
+          <figure className="motion-photo motion-photo-c">
+            <img src={siteImages.contestWinners} alt="District 47 speech contest winners" />
+            <figcaption><span>CONTESTS</span><strong>Confidence under pressure</strong></figcaption>
+          </figure>
+          <figure className="motion-photo motion-photo-d">
+            <img src={siteImages.conferenceDinner} alt="District 47 annual conference gathering" />
+            <figcaption><span>CONFERENCE</span><strong>One District in the same room</strong></figcaption>
+          </figure>
+          <figure className="motion-photo motion-photo-e">
+            <img src={siteImages.trainingCD} alt="District 47 Toastmasters at training" />
           </figure>
         </div>
       </section>
 
-      <section className="section events-preview">
+      <section className="pulse-section">
+        <div className="container">
+          <div className="split-heading pulse-heading">
+            <div>
+              <span className="eyebrow">NOW IN DISTRICT 47</span>
+              <h2>What members should know right now.</h2>
+            </div>
+            <Link className="text-link" to="/news">All District news <ArrowRight size={16} /></Link>
+          </div>
+          <div className="pulse-grid">
+            <a className="pulse-feature" href="https://www.toastmastersd47.org/the-sunshiner-issue-2-october-2026/" target="_blank" rel="noreferrer">
+              <img src={siteImages.training} alt="District 47 members together at training" />
+              <div className="pulse-overlay">
+                <span className="small-label light">THE SUNSHINER · OCTOBER 2026</span>
+                <h3>The Sunshiner Issue 2</h3>
+                <p>The latest District publication, current news and member stories.</p>
+                <span className="story-link">Read the issue <ArrowRight size={15} /></span>
+              </div>
+            </a>
+            <div className="pulse-stack">
+              <a className="pulse-story" href="https://www.toastmastersd47.org/district-47-celebrating-excellence/" target="_blank" rel="noreferrer">
+                <img src={siteImages.hallOfFame} alt="District 47 recognition event" />
+                <div><span>RECOGNITION</span><strong>District 47: Celebrating Excellence</strong></div>
+              </a>
+              <a className="pulse-story" href="https://www.toastmastersd47.org/vision-d47-tune-in-2026-2027-toastmasters-year/" target="_blank" rel="noreferrer">
+                <img src={siteImages.conferenceWorkshop} alt="District 47 leadership development session" />
+                <div><span>LEADERSHIP</span><strong>Vision D47: Tune In 2026–2027</strong></div>
+              </a>
+              <a className="pulse-story" href="https://www.toastmastersd47.org/d47-photo-gallery/" target="_blank" rel="noreferrer">
+                <img src={siteImages.internationalChampions} alt="District 47 speech contest champions" />
+                <div><span>PHOTO GALLERY</span><strong>See District 47 in action</strong></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section events-preview flow-bridge">
         <div className="container split-heading">
           <div>
             <span className="eyebrow">COMING UP</span>
@@ -233,9 +335,9 @@ function Home() {
           </div>
           <Link className="text-link" to="/events">View all events <ArrowRight size={16} /></Link>
         </div>
-        <div className="container date-list">
-          {keyDates.slice(0, 3).map(item => (
-            <article className="date-card" key={item.title}>
+        <div className="container date-list date-list-soft">
+          {keyDates.slice(0, 4).map(item => (
+            <article className="date-card date-card-soft" key={item.title}>
               <div className="date-chip">{item.date}</div>
               <div>
                 <span className="small-label">{item.type}</span>
@@ -248,48 +350,53 @@ function Home() {
         </div>
       </section>
 
-      <section className="section district-story">
-        <div className="container story-grid">
-          <div className="story-block blue">
-            <span className="eyebrow light">SINCE 1955</span>
-            <h2>Built across borders. Connected by the same practice.</h2>
-            <p>
-              The Bahamas joined District 47 in 1973. Today, clubs span South Florida, multiple Bahamian islands and
-              online communities.
-            </p>
-            <Link className="button button-ghost" to="/about">Explore our history</Link>
+      <section className="home-resources">
+        <div className="container home-resources-shell">
+          <div className="home-resources-copy">
+            <span className="eyebrow light">MEMBER HUB</span>
+            <h2>The things members return for.</h2>
+            <p>Training, contest support, District business, video archives, recognition and the current calendar.</p>
+            <Link className="button button-yellow" to="/members">Open member resources <ArrowRight size={16} /></Link>
           </div>
-          <div className="story-block maroon">
-            <span className="eyebrow light">2026–2027</span>
-            <h2>Meet the people serving the District this year.</h2>
-            <p>
-              District Director Dr. Susan Vineta, DTM leads the 2026–2027 team with leaders across eight Divisions.
-            </p>
-            <Link className="button button-ghost" to="/leadership">Leadership directory</Link>
+          <div className="home-resource-links">
+            {[
+              ['Club Officer Training / TLI', 'https://www.toastmastersd47.org/club-officer-training-and-tlis/'],
+              ['District Calendar', 'https://www.toastmastersd47.org/district-calendar/'],
+              ['Contests & Resources', 'https://www.toastmastersd47.org/contests-contest-resources/'],
+              ['District Business', 'https://www.toastmastersd47.org/district-council-meetings/'],
+              ['Video Archives', 'https://www.youtube.com/@District47Toastmasters'],
+              ['The Sunshiner', 'https://www.toastmastersd47.org/the-sunshiner-archive/'],
+            ].map(([label, href], i) => (
+              <a href={href} target="_blank" rel="noreferrer" key={label}>
+                <span>0{i + 1}</span><strong>{label}</strong><ArrowRight size={16} />
+              </a>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section latest">
-        <div className="container split-heading">
-          <div>
-            <span className="eyebrow">DISTRICT NEWS</span>
-            <h2>Latest from District 47.</h2>
+      <section className="recognition-home">
+        <div className="container recognition-home-grid">
+          <div className="recognition-home-copy">
+            <span className="eyebrow">RECOGNITION & HISTORY</span>
+            <h2>Progress deserves a record.</h2>
+            <p>
+              From Distinguished Toastmasters and club growth to decades of District history, the work should remain
+              visible long after the applause ends.
+            </p>
+            <div className="recognition-actions">
+              <Link className="text-link" to="/recognition">Recognition & awards <ArrowRight size={16} /></Link>
+              <Link className="text-link" to="/about">District history <ArrowRight size={16} /></Link>
+            </div>
           </div>
-          <Link className="text-link" to="/news">See all news <ArrowRight size={16} /></Link>
-        </div>
-        <div className="container news-grid">
-          {newsItems.slice(0, 3).map(item => (
-            <article className="news-card" key={item.title}>
-              <span className="small-label">{item.category}</span>
-              <h3>{item.title}</h3>
-              <p>{item.date}</p>
-            </article>
-          ))}
+          <div className="recognition-home-photos">
+            <img className="recognition-back" src={siteImages.conferenceRecognition} alt="District 47 recognition ceremony" />
+            <img className="recognition-front" src={siteImages.divisionDContest} alt="District 47 contest winners with trophies" />
+          </div>
         </div>
       </section>
 
-      <section className="cta-band">
+      <section className="cta-band cta-band-polished">
         <div className="container cta-grid">
           <div>
             <span className="eyebrow light">NEW TO TOASTMASTERS?</span>
