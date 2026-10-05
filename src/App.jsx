@@ -141,9 +141,6 @@ function PageHero({ eyebrow, title, intro, action }) {
 }
 
 function Home() {
-  const bahamasClubs = clubs.filter(c => c.country === 'The Bahamas').length
-  const usClubs = clubs.filter(c => c.country === 'United States').length
-
   return (
     <>
       <section className="hero">
@@ -166,8 +163,8 @@ function Home() {
           <div className="hero-panel">
             <span className="panel-label">DISTRICT 47 · EST. 1955</span>
             <div className="region-row">
-              <div className="region-stat"><strong>{usClubs}</strong><span>listed U.S. clubs</span></div>
-              <div className="region-stat"><strong>{bahamasClubs}</strong><span>listed Bahamas clubs</span></div>
+              <div className="region-stat"><strong>8</strong><span>Divisions A–H</span></div>
+              <div className="region-stat"><strong>1955</strong><span>District established</span></div>
             </div>
             <p>
               Current directory data is based on the District alignment published July 6, 2026. Official club meeting
