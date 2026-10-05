@@ -40,6 +40,17 @@ const navItems = [
   ['News', '/news'],
 ]
 
+const siteImages = {
+  logo: 'https://www.toastmastersd47.org/wp-content/uploads/2026/06/D47-Logo-Horizontal.jpeg',
+  trio: 'https://www.toastmastersd47.org/wp-content/uploads/2026/06/TRIO-Banner.jpeg',
+  convention: 'https://www.toastmastersd47.org/wp-content/uploads/2025/08/1000039244-1024x562.jpg',
+  hallOfFame: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-05-17-Florida-Hall-of-Fame-1024x682.jpg',
+  annualConference: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-05-04-Annual-Conference.jpg',
+  contestWinners: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-03-29-Division-C-Contests-1024x682.jpg',
+  training: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2025-01-18-Divisions-A-B-TLI.jpg',
+  conferenceRecognition: 'https://www.toastmastersd47.org/wp-content/uploads/2025/07/2024-05-04-District-Conference-1024x682.jpg',
+}
+
 function ExternalLinkButton({ href, children, className = '' }) {
   return (
     <a className={`button ${className}`} href={href} target="_blank" rel="noreferrer">
@@ -51,9 +62,7 @@ function ExternalLinkButton({ href, children, className = '' }) {
 function Brand() {
   return (
     <Link to="/" className="brand" aria-label="Toastmasters District 47 home">
-      <span className="brand-org">TOASTMASTERS INTERNATIONAL®</span>
-      <span className="brand-district">DISTRICT 47</span>
-      <span className="brand-region">South Florida · The Bahamas</span>
+      <img src={siteImages.logo} alt="Toastmasters District 47 — South Florida and The Islands of The Bahamas" />
     </Link>
   )
 }
@@ -160,17 +169,17 @@ function Home() {
               <Link className="button button-ghost" to="/events">Upcoming Events</Link>
             </div>
           </div>
-          <div className="hero-panel">
-            <span className="panel-label">DISTRICT 47 · EST. 1955</span>
-            <div className="region-row">
-              <div className="region-stat"><strong>8</strong><span>Divisions A–H</span></div>
-              <div className="region-stat"><strong>1955</strong><span>District established</span></div>
+          <div className="hero-media">
+            <img src={siteImages.convention} alt="District 47 members celebrating together at a Toastmasters event" />
+            <div className="hero-stat-card">
+              <span className="panel-label">DISTRICT 47 · EST. 1955</span>
+              <div className="region-row">
+                <div className="region-stat"><strong>3,000+</strong><span>members</span></div>
+                <div className="region-stat"><strong>170+</strong><span>clubs</span></div>
+              </div>
+              <p>Serving South Florida and The Islands of The Bahamas, plus fully online clubs with international members.</p>
+              <Link to="/clubs" className="text-link light-link">Explore the directory <ChevronRight size={16} /></Link>
             </div>
-            <p>
-              Current directory data is based on the District alignment published July 6, 2026. Official club meeting
-              details remain on Toastmasters International.
-            </p>
-            <Link to="/clubs" className="text-link light-link">Explore the directory <ChevronRight size={16} /></Link>
           </div>
         </div>
       </section>
@@ -196,6 +205,23 @@ function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="photo-proof">
+        <div className="container photo-proof-grid">
+          <figure className="photo-proof-main">
+            <img src={siteImages.training} alt="District 47 Toastmasters gathered for training" />
+            <figcaption>Training across the District</figcaption>
+          </figure>
+          <figure>
+            <img src={siteImages.hallOfFame} alt="District 47 members at a Hall of Fame event" />
+            <figcaption>Recognition that matters</figcaption>
+          </figure>
+          <figure>
+            <img src={siteImages.annualConference} alt="District 47 members at the annual conference" />
+            <figcaption>One District, in the same room</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -355,6 +381,16 @@ function Events() {
         intro="Clear dates for District events, contest progression, training and the 2027 Annual Conference."
         action={<ExternalLinkButton href="https://www.toastmastersd47.org/district-calendar/">Open District calendar</ExternalLinkButton>}
       />
+      <section className="section visual-intro-section">
+        <div className="container visual-intro">
+          <img src={siteImages.annualConference} alt="District 47 annual conference gathering" />
+          <div>
+            <span className="eyebrow">DISTRICT EVENTS</span>
+            <h2>Show up. Compete. Learn. Connect.</h2>
+            <p>District 47 events bring together members from across South Florida and The Bahamas for training, contests, recognition and the annual conference.</p>
+          </div>
+        </div>
+      </section>
       <section className="section">
         <div className="container">
           <div className="timeline">
@@ -441,6 +477,9 @@ function Leadership() {
         intro="District, Division and Area leaders serving the current Toastmasters year."
       />
       <section className="section">
+        <div className="container leadership-banner">
+          <img src={siteImages.trio} alt="District 47 2026–2027 Trio" />
+        </div>
         <div className="container">
           <div className="section-heading">
             <span className="eyebrow">DISTRICT EXECUTIVE TEAM</span>
@@ -503,8 +542,18 @@ function About() {
       <PageHero
         eyebrow="ABOUT DISTRICT 47"
         title="A District with a long memory and a wide map."
-        intro="District 47 was established in 1955. The Bahamas joined in 1973. Today the District connects clubs across South Florida, The Bahamas and online communities."
+        intro="District 47 was established in 1955 and serves South Florida and The Islands of The Bahamas. The District supports over 3,000 members in 170+ clubs, along with several fully online clubs with international members."
       />
+      <section className="section district-photo-lead">
+        <div className="container district-photo-card">
+          <img src={siteImages.convention} alt="District 47 members together at a Toastmasters event" />
+          <div>
+            <span className="eyebrow">DISTRICT 47 TODAY</span>
+            <h2>Over 3,000 members. 170+ clubs.</h2>
+            <p>South Florida, The Islands of The Bahamas and online communities connected through the same Toastmasters mission.</p>
+          </div>
+        </div>
+      </section>
       <section className="section">
         <div className="container history-layout">
           <div className="history-intro">
@@ -549,6 +598,16 @@ function Recognition() {
         title="Celebrate progress. Preserve the record."
         intro="District recognition should be easy to find, easy to update and separate from time-sensitive news."
       />
+      <section className="section recognition-photo-strip">
+        <div className="container recognition-photo">
+          <img src={siteImages.contestWinners} alt="District 47 members receiving contest recognition" />
+          <div>
+            <span className="eyebrow light">RECOGNITION</span>
+            <h2>Celebrate the work.</h2>
+            <p>District 47 recognizes members and clubs for growth, service, speaking, leadership and sustained excellence.</p>
+          </div>
+        </div>
+      </section>
       <section className="section">
         <div className="container recognition-grid">
           <article className="feature-card">
