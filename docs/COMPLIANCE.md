@@ -17,9 +17,10 @@ The site uses approved free font alternatives:
 
 ### Identity
 - No custom District logo has been created.
+- The current official District 47 horizontal logo published on toastmastersd47.org is used.
 - No alternate District tagline has been created.
 - The official Toastmasters tagline, “Where Leaders Are Made.”, is used.
-- The interface identifies the organization as Toastmasters International / District 47 using text until approved official logo artwork is supplied from an authorized Toastmasters source.
+- District photography published in the existing D47 website/gallery is approved for this rebuild and is used as the visual source.
 
 ### Required website statement
 The footer includes the Toastmasters International statement required by Protocol 4.0.
@@ -44,12 +45,11 @@ The new structure prominently supports:
 
 ## Pre-launch requirements
 
-The code is intentionally not shipping a fabricated or hot-linked Toastmasters logo. Before production:
-1. Add the current approved Toastmasters/District brand artwork from an authorized brand source.
-2. Use only District-authorized photography or assets with appropriate rights.
-3. Have the District Director or authorized District leadership approve current content.
-4. Confirm that the club alignment has not changed since the July 6, 2026 source.
-5. Recheck all time-sensitive event dates.
+Before production:
+1. Copy the currently referenced official District logo and approved District photography into the production asset host/repository so the new site does not depend on the legacy WordPress media origin after domain cutover.
+2. Have the District Director or authorized District leadership approve current content.
+3. Confirm that the club alignment has not changed since the July 6, 2026 source.
+4. Recheck all time-sensitive event dates and published District figures.
 
 ## Accessibility / UX baseline
 
