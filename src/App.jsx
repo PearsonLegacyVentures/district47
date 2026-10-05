@@ -112,11 +112,11 @@ function Footer() {
         <ShieldCheck size={18} />
         <p>
           Toastmasters International® owns all Toastmasters trademarks and copyrights, including “Toastmaster,”
-          “Toastmasters,” “Toastmasters International,” and the official emblem. District 47 is authorized to use
-          these marks in the form and manner prescribed by the Toastmasters International Board of Directors.
-          Information, photos, and all other materials posted are for the sole use of Toastmasters’ members, for
-          Toastmasters business only. They are not to be used for solicitation or distribution of non-Toastmasters
-          material or information.
+          “Toastmasters,” “Toastmasters International,” and the “official emblem.” All club, Area, Division, District,
+          and region websites and social media channels are authorized to use these marks in the form and manner
+          prescribed by the Toastmasters International Board of Directors. Information, photos, and all other materials
+          posted are for the sole use of Toastmasters’ members, for Toastmasters business only. It is not to be used
+          for solicitation or distribution of non-Toastmasters material or information.
         </p>
       </div>
       <div className="footer-bottom">
